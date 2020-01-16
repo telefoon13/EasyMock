@@ -11,10 +11,10 @@ import static org.junit.Assert.*;
 
 public class PricingServiceTest {
 
-    String correcteID = "15";
-    String fouteID = "16";
-    PricingService pricingService;
-    IDataAccess dataAccess;
+    private String correcteID = "15";
+    private String fouteID = "16";
+    private PricingService pricingService;
+    private IDataAccess dataAccess;
 
     @Before
     public void setUp() throws Exception {
@@ -42,6 +42,6 @@ public class PricingServiceTest {
     public void getPriceThrowRunTime() throws ProductNotFoundException{
         expect(dataAccess.getPriceByID(correcteID)).andThrow(new RuntimeException("FOUT"));
         replay(dataAccess);
-        
+
     }
 }
